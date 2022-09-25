@@ -34,7 +34,7 @@ part3()    { pn $1 C C C G D A G A D E; }
 part4()    { pn $1 C C C G D A G A D E; }
 part1()    { pn $1 A A A G G G E E G E  E E E G G G D D; }
 
-k=1
+k=0
 while [[ 1 ]]; do
 	rhythm1 $Yellow
 	rhythm2 $Purple
