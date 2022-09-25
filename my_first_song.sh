@@ -17,7 +17,7 @@ pn () {
 	i=0
         for var in "$@"; do
 		if [[ "$i" -gt 1 ]]; then
-			echo -en "$color$var"
+			echo -en "$color$var "
 			play -qn synth 2 pluck $var &
 			sleep 0.19
 		fi
@@ -29,30 +29,26 @@ pn () {
 
 rhythm1 () { pn $1 A A A G G G C C C    E E E G G G D D D; }
 rhythm2 () { pn $1 E E A C C G E E A    C C G E E A C A G; }
-part1()    { pn $1 A C C G A A A G G E  A C C G A A A G G A; }
-part2()    { pn $1 C C C G D A G A D; }
-part3()    { pn $1 C C C G D A G A D; }
-part4()    { pn $1 A A A G G G E E G; }
+part2()    { pn $1 A C C G A A A G G E; }
+part3()    { pn $1 C C C G D A G A D E; }
+part4()    { pn $1 C C C G D A G A D E; }
+part1()    { pn $1 A A A G G G E E G E  E E E G G G D D; }
 
+k=1
 while [[ 1 ]]; do
-	k=0
-	while [[ 1 ]]; do
-		rhythm1 $Yellow
-		rhythm2 $Purple
-		k=$((k+1))
+	rhythm1 $Yellow
+	rhythm2 $Purple
+	k=$((k+1))
 
-		if ! ((k % 5)); then
-			part4 $Cyan &
-		elif ! ((k % 4)); then
-			part3 $Blue &
-			part2 $Green &
-		elif ! ((k % 4)); then
-			part2 $Green &
-		elif [[ $k == 1 ]]; then
-			part1 $Red &
-		fi
-	done
-
-
+	if ! ((k % 5)); then
+		part4 $Cyan &
+	elif ! ((k % 4)); then
+		part3 $Blue &
+		part2 $Green &
+	elif ! ((k % 4)); then
+		part2 $Green &
+	elif [[ $k == 1 ]]; then
+		part1 $Red &
+	fi
 	wait
 done
