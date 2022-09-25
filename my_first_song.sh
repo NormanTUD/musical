@@ -27,11 +27,11 @@ pn () {
 	echo -e ""
 }
 
-rhythm1 () { pn $1 A A A G G G C C C    E E E G G G D D D; }
+rhythm1 () { pn $1 A A A G G G C C C    E E E G G G E E E; }
 rhythm2 () { pn $1 E E A C C G E E A    C C G E E A C A G; }
 part2()    { pn $1 A C C G A A A G G E; }
-part3()    { pn $1 C C C G D A G A D E; }
-part4()    { pn $1 C C C G D A G A D E; }
+part3()    { pn $1 C C C G D A G A E; }
+part4()    { pn $1 C C C G D A G A E; }
 part1()    { pn $1 A A A G G G E E G E  E E E G G G D D; }
 
 k=0
