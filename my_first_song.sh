@@ -19,8 +19,8 @@ pn () {
 		if [[ "$i" -gt 1 ]]; then
 			echo -en "$color$var "
 			#play -qn synth 1.3 pluck $var &
-			play -n -c1 synth sin %-12 sin %-9 sin %-5 sin %-2 pluck $var fade q 0.05 0.8 0.2 2>/dev/null &
-			sleep 0.35
+			play -n -c1 synth sin %-12 sin %-9 sin %-5 sin %-2 pluck $var fade q 0.1 0.7 0.2 2>/dev/null &
+			sleep 0.3
 		fi
 		i=$((i+1))
         done
